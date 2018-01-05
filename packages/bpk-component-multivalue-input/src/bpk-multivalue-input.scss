@@ -1,0 +1,69 @@
+@import '~bpk-mixins';
+
+$size: $bpk-select-height;
+$select-min-width: 100px; /* stylelint-disable-line unit-blacklist */
+
+.bpk-multivalue-input {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  line-height: 0;
+
+  &__select {
+    position: static;
+    float: left;
+    display: inline-block;
+    width: 100%;
+
+    @include bpk-breakpoint-above-mobile {
+      width: 20%;
+    }
+
+    /* These are the classnames defined by React Select, so we can't change them */
+    &-control {
+      @include bpk-select;
+
+      @include bpk-breakpoint-above-mobile {
+        @include bpk-select--docked-first-child;
+      }
+
+      @include bpk-breakpoint-mobile {
+        border-radius: $bpk-input-border-radius $bpk-input-border-radius 0 0;
+      }
+
+      /* This must be placed after the mixins, to override them */
+      padding: 0; /* stylelint-disable-line order/order */
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    // .Select-menu-outer
+    &-menu-container {
+      position: absolute;
+      top: $size;
+      right: $size + $bpk-spacing-xs;
+      left: 0;
+      width: 100%;
+      border: $bpk-select-border;
+      border-radius: $bpk-select-border-radius;
+    }
+  }
+
+  &__input {
+    width: 100%;
+
+    @include bpk-breakpoint-above-mobile {
+      width: 80%;
+
+      @include bpk-input--docked-last-child;
+    }
+
+    @include bpk-breakpoint-mobile {
+      border-top-width: 0;
+      border-radius: 0 0 $bpk-input-border-radius $bpk-input-border-radius;
+    }
+  }
+}
+

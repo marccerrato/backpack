@@ -1,0 +1,24 @@
+{
+  "name": "bpk-multivalue-input",
+  "version": "0.0.1",
+  "description": "Backpack multivalue input component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.4.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "bpk-component-input": "^3.2.46",
+    "bpk-component-select": "^2.1.44",
+    "bpk-mixins": "^17.2.2",
+    "react-select": "^1.1.0"
+  }
+}
